@@ -1,0 +1,6 @@
+import test from'node:test';import assert from'node:assert/strict';import{INITIAL,validate,connect,mapSvg}from'./core.mjs';
+test('valid graph exports complete, safe SVG text',()=>{assert.equal(validate(INITIAL),INITIAL);const svg=mapSvg({...INITIAL,nodes:INITIAL.nodes.map((n,i)=>i===0?{...n,label:'<script>bad</script>'}:n)});assert.ok(svg.includes('&lt;script&gt;'));assert.ok(!svg.includes('<script>'));});
+test('every edge needs a reason and two valid, distinct concepts',()=>{assert.throws(()=>connect(INITIAL,'diffusion','potential','','new'));assert.throws(()=>connect(INITIAL,'diffusion','diffusion','same','new'));assert.throws(()=>connect(INITIAL,'missing','potential','why','new'));assert.throws(()=>connect(INITIAL,'potential','diffusion','duplicate','new'));assert.equal(connect(INITIAL,'diffusion','feedback','A question to explore','new').edges.length,4);});
+test('corrupt, oversized and duplicate-id imports reject',()=>{assert.throws(()=>validate({...INITIAL,nodes:[...INITIAL.nodes,INITIAL.nodes[0]]}));assert.throws(()=>validate({...INITIAL,nodes:INITIAL.nodes.map((n,i)=>i? n:{...n,x:1e9})}));assert.throws(()=>validate({...INITIAL,edges:[{id:'a',from:'x',to:'y',reason:'reason'}]}));});
+
+test('concept identifiers must be strings',()=>{assert.throws(()=>validate({...INITIAL,nodes:[{...INITIAL.nodes[0],id:123}],edges:[]}));});

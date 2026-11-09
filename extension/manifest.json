@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Thread",
+  "version": "0.1.0",
+  "description": "Save selected reading into a cross-class concept map.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Save to Thread"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'none';"
+  }
+}

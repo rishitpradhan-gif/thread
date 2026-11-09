@@ -1,0 +1,15 @@
+{
+  "name": "Thread",
+  "short_name": "Thread",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f0e5",
+  "theme_color": "#2247ac",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

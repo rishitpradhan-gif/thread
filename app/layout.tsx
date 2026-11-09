@@ -1,0 +1,1 @@
+import type { Metadata } from 'next';import './globals.css';export const metadata:Metadata={title:'Thread',description:'A cross-class concept wall with reasons for every connection.',manifest:'/manifest.webmanifest',icons:{icon:'/icon.svg'}};export default function Layout({children}:Readonly<{children:React.ReactNode}>){return <html lang="en"><body>{children}</body></html>}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "add concept",
+    "course label",
+    "keyboard move",
+    "pointer drag",
+    "explained connection",
+    "SVG export",
+    "reload persistence",
+    "mobile overflow"
+  ],
+  "pageErrors": []
+}

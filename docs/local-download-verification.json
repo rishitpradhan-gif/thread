@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "checks": [
+    "ZIP extracted independently",
+    "bundled launcher starts",
+    "local index serves successfully"
+  ]
+}

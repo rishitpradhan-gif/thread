@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "browser": "isolated Chrome profile; official CDP Extensions testing API",
+  "checks": [
+    "actual unpacked install",
+    "real toolbar permission grant and capture message on selected web text",
+    "exact selection stored with provenance",
+    "bundled workspace opens",
+    "real extension inbox loads",
+    "clip imports into app",
+    "clip deletion"
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  "pageErrors": []
+}
